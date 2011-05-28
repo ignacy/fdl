@@ -1,0 +1,35 @@
+FDL (Fractious Device Logger)
+==============
+
+Logging is one of the most useful things when haunting for bugs.
+But sometimes it's especially hard to log data - for example:
+if we are working on a device with no storage, or if we can access
+either log or the application itself at a given time.
+
+In cases like that it would be nice to use a remote logging
+solution. FDL is a remote logger designed to work
+with fractious devices/software.
+
+Features
+========
+
+* build on top of sinatra
+* uses GET request (sometimes sending a POST is hard)
+* auto refreshing
+* can maintain multiple logs at once
+* allows to search, filter and save log data
+* has wrappers for Ruby, Java and JavaScript
+
+
+Usage
+=====
+
+1. run the application
+
+    $> fdl -p 4567
+
+2. configure logger to send log messages to http://host_ip:4567/log_name
+
+3. Open http://host_id:4567/view/log_name with your browser, and you are ready to go!
+
+
