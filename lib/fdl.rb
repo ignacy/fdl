@@ -1,5 +1,9 @@
 require "fdl/version"
+require "sinatra/base"
 
 module Fdl
-  # Your code goes here...
+    class MainApp < Sinatra::Base
+
+
+    end
 end
