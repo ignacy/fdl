@@ -8,23 +8,23 @@ class TestFdl < MiniTest::Unit::TestCase
     include Rack::Test::Methods
 
     def app
-        Fdl::MainApp.new
+        Fdl::Fdl.new
     end
 
     def test_post_log_message
-        Fdl::MainApp.expects(:push).with("hello")
+        Fdl::Fdl.expects(:push).with("hello")
         get "/log", message: "hello"
         assert_equal 201, last_response.status
     end
 
     def test_post_message_epty
-       Fdl::MainApp.expects(:push).never 
+       Fdl::Fdl.expects(:push).never 
        get "/log", message: "       "
        assert_equal 400, last_response.status
     end
 
     def test_post_no_message
-        Fdl::MainApp.expects(:push).never
+        Fdl::Fdl.expects(:push).never
         get "/log" 
         assert_equal 400, last_response.status
     end
