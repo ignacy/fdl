@@ -1,9 +1,10 @@
 require_relative "fdl/version"
 require "sinatra"
 require "sinatra/base"
+require "haml"
 
 module Fdl
-    class Fdl < Sinatra::Base
+    class WebApp < Sinatra::Base
         set :root, File.expand_path("../..", __FILE__)
 
         get "/" do
@@ -17,12 +18,19 @@ module Fdl
                 halt 400
             end
 
-            Fdl.push(params[:message])
-            201
+            WebApp.push(params[:message])
+            204
+        end
+
+        get "/show" do
+            @logs = File.readlines("public/log.txt")
+            haml :show
         end
 
         def self.push message
-
+           File.open("public/log.txt", "a+") do |f|
+              f.puts message
+           end 
         end
     end
 end

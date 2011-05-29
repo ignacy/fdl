@@ -14,7 +14,7 @@ class TestFdl < MiniTest::Unit::TestCase
     def test_post_log_message
         Fdl::Fdl.expects(:push).with("hello")
         get "/log", message: "hello"
-        assert_equal 201, last_response.status
+        assert_equal 204, last_response.status
     end
 
     def test_post_message_epty

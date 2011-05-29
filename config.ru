@@ -1,2 +1,3 @@
 require './lib/fdl'
-run Sinatra::Application
+
+run Fdl::WebApp
