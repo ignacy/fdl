@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "Starting fdl process in the background.."
+rackup -p 8181 
+echo "Done."
