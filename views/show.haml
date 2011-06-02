@@ -1,6 +1,14 @@
 %link(rel="stylesheet" type="text/css" href="styl.css")
+%script(type="text/javascript" src="jquery-1.6.1.min.js") 
+
 %h3= "log data for #{@date.to_s}"
 
 %ul
   - @logs.each do |log|
     %li= log
+
+:javascript
+  jQuery(function(){
+    var top = $("li:last").offset().top - 20;
+    $("html:not(:animated),body:not(:animated)").animate({ scrollTop: top}, 500 );
+  });
