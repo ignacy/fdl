@@ -1,0 +1,43 @@
+﻿body {
+  background: none repeat scroll 0 0 #FFFFFF;
+}
+
+h3 {
+  background: #333;
+  color: #f3f3f3;
+  text-align: center;
+  font-size: 150%;
+  font-variant:small-caps;
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+
+ul {
+  list-style-type:none;
+  font-family: "Tahoma",Geneva,sans-serif;
+  font-size: 110%;
+  line-height: 30px;
+  position: relative;  
+  width: 1000px;  
+  padding: 50px;  
+  margin: 0 auto;  
+  background-color: #fff;  
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);  
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);  
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1); 
+
+}
+
+ul li:nth-child(odd) {
+  background: #eee; 
+  padding-left: 5px;
+}
+ul li:nth-child(even) {
+  background: #e1e1e1; 
+  padding-left: 5px;
+}
+
+ul li small {
+  margin-right: 10px;
+}
