@@ -1,5 +1,8 @@
 #! /usr/bin/env ruby
 $:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
+
+require "rubygems"
 require 'fdl'
 
-%x[rackup -p "8181"]
+path = File.expand_path(File.dirname(__FILE__)).gsub(/bin/, "config.ru")
+%x[rackup #{path} -p "8181"]

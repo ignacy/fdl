@@ -30,9 +30,9 @@ module Fdl
         end
 
         def self.push message
-           File.open("public/log.txt", "a+") do |f|
-              f.puts "<small>#{Time.now.strftime("%m/%d/%Y at %H:%M")} </small> #{message}"
-           end 
+            File.open("public/log.txt", "a+") do |f|
+                f.puts "<small>#{Time.now.strftime("%m/%d/%Y at %H:%M")} </small> #{message}"
+            end 
         end
     end
 end
