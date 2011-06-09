@@ -25,7 +25,11 @@ module Fdl
 
         get "/show" do
             @date = Date.today
-            @logs = File.readlines("public/log.txt")
+            if File.exists?("public/log.txt")
+                @logs = File.readlines("public/log.txt").reverse
+            else 
+                @logs = ["Nothing logged yet"]
+            end
             haml :show
         end
 

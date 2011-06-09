@@ -6,9 +6,8 @@ h3 {
   background: #333;
   color: #f3f3f3;
   text-align: center;
-  font-size: 150%;
-  font-variant:small-caps;
-  padding-top: 5px;
+  font-size: 25px;
+  padding-top: 10px;
   padding-bottom: 20px;
 }
 
@@ -16,7 +15,7 @@ h3 {
 ul {
   list-style-type:none;
   font-family: "Tahoma",Geneva,sans-serif;
-  font-size: 110%;
+  font-size: 16px;
   line-height: 30px;
   position: relative;  
   width: 1000px;  
