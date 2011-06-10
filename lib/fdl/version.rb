@@ -1,3 +1,3 @@
 module Fdl
-  VERSION = "0.9.0"
+  VERSION = "0.9.8"
 end
