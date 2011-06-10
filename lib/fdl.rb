@@ -25,8 +25,8 @@ module Fdl
 
         get "/show" do
             @date = Date.today
-            if File.exists?("public/log.txt")
-                @logs = File.readlines("public/log.txt").reverse
+            if File.exists?(WebApp.log_file_path)
+                @logs = File.readlines(WebApp.log_file_path).reverse
             else 
                 @logs = ["Nothing logged yet"]
             end
@@ -34,9 +34,13 @@ module Fdl
         end
 
         def self.push message
-            File.open("public/log.txt", "a+") do |f|
+            File.open(log_file_path, "a+") do |f|
                 f.puts "<small>#{Time.now.strftime("%m/%d/%Y at %H:%M")} </small> #{message}"
             end 
+        end
+
+        def self.log_file_path
+            File.expand_path(File.dirname(__FILE__)).gsub(/lib/, "/public/log.txt")
         end
     end
 end
