@@ -16,20 +16,19 @@ Features
 * build on top of sinatra
 * uses GET request (sometimes sending a POST is hard)
 * auto refreshing
-* can maintain multiple logs at once
-* allows to search, filter and save log data
 * has wrappers for Ruby, Java and JavaScript
-
 
 Usage
 =====
 
-1. run the application
+Install the gem:
 
-    $> fdl -p 4567
+    gem install fdl
 
-2. configure logger to send log messages to http://host_ip:4567/log_name
+Run the application
 
-3. Open http://host_id:4567/view/log_name with your browser, and you are ready to go!
+    fdl [run|clear]
 
+Use your loger to send the messages to localhost:8181
+You can view the newest log under http://localhost:8181/show
 
