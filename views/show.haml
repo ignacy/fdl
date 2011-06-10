@@ -5,5 +5,5 @@
 
 %ul
   - @logs.each do |log|
-    %li= log
+    %li= log.gsub(/_/, " ")
 
