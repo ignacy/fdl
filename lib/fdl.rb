@@ -40,7 +40,7 @@ module Fdl
         end
 
         def self.log_file_path
-            File.expand_path(File.dirname(__FILE__)).gsub(/lib/, "/public/log.txt")
+            File.expand_path(File.dirname(__FILE__)).gsub(/\/lib\z/, "/public/log.txt")
         end
     end
 end

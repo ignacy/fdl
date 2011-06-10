@@ -4,5 +4,20 @@ $:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
 require "rubygems"
 require 'fdl'
 
-path = File.expand_path(File.dirname(__FILE__)).gsub(/bin/, "config.ru")
-%x[rackup #{path} -p "8181"]
+USAGE = "Usage: fdl [run|clear]"
+BASE_PATH = File.expand_path(File.dirname(__FILE__))
+
+if ARGV[0].nil?
+    puts USAGE
+    exit
+end
+
+if ARGV[0] == "run"
+    puts "\033[1;36mStarting log server on port 8181...\033[0m"
+    path = BASE_PATH.gsub(/\/bin\z/, "/config.ru")
+    %x[rackup #{path} -p "8181"]
+elsif ARGV[0] == "clear"
+    log = BASE_PATH.gsub(/\/bin\z/, "/public/log.txt")
+    File.open(log, "w+") { |f| f.truncate(0); f.close}
+    puts "\033[1;36mLog cleared\033[0m"
+end
